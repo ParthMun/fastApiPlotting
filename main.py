@@ -13,30 +13,6 @@ ROOT_DIR = os.path.dirname(os.path.abspath(path="plotting"))
 from funcs.common_fun import cleanse, plot_line, plot_scatter, plot_bar, plot_pie_chart, plot_area, plot_boxa, \
     plot_histo, plot_hexbina, plot_barh
 
-fake_users_db = {
-    "ParthM": {
-        "username": "parthm",
-        "full_name": "Parth Mundhwa",
-        "email": "parthm@inferenz.ai",
-        "hashed_password": "password",
-        "disabled": False,
-    }
-}
-
-
-class User(BaseModel):
-    username: str
-    email: str
-    full_name: str
-    disabled: bool
-
-
-class UserInDB(User):
-    hashed_password: str
-
-
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
-
 app = FastAPI()
 
 
